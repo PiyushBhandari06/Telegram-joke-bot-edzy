@@ -1,7 +1,9 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import axios from "axios";
 
-const JOKE_API_URL =
-  "https://official-joke-api.appspot.com/random_joke";
+const JOKE_API_URL = process.env.JOKE_API_URL;
 
 const fetchRandomJoke = async () => {
   try {
@@ -16,9 +18,11 @@ const fetchRandomJoke = async () => {
     }
 
     return `${setup}\n\n${punchline}`;
+
   } catch (error) {
     console.error("Joke fetch failed:", error.message);
     return "Joke service is temporarily unavailable. Try again later.";
+    
   }
 };
 

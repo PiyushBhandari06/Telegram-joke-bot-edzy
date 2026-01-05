@@ -9,7 +9,7 @@ const createBot = () => {
     polling: true
   });
 
-  console.log("Telegram bot initialized");
+  console.log("Telegram bot initialized...");
   return bot;
 };
 
